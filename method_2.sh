@@ -19,7 +19,7 @@ mx=0
 m=25
 mx_flag=0
 c=0
-for i in range(0,100):
+for i in range(0,200):
 	c=c+1
 	if i<9:
 		index=i
