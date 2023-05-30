@@ -104,7 +104,7 @@ for i in range(0,200):
 				pass
 			last_line = line
 		last_line = last_line.split(" ")
-
+		res[index].append(int(last_line[-1]))
 		file.close()
 
 	p=os.popen("fred_delete -k script","w")
