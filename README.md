@@ -1,6 +1,6 @@
 # intervention-estimation
 
-This code is for intervention estimaton paper preprint using Python as a programming language to estimate interventions using simulated data.
+This code is for intervention estimaton paper preprint using Python as a programming language to estimate intervention effects using simulated data.
 
 ## Abstract
 Large-scale models require huge computational resources for analysis and studying interventions. Specifically, estimating intervention effects using simulations may require a lot of resources that are infeasible to allocate at every treatment condition, and therefore, it is important to come up with efficient methods to allocate computational resources for estimating intervention effects. Agent-based simulation allows us to generate highly realistic simulation samples. FRED (A
