@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-#This is the code for second method proposed
+#This is the code for second method (greedy-1) proposed
 
 import os
 import glob
@@ -35,11 +35,11 @@ for i in range(0,200):
 				mx=abs(ci[j][0]-ci[j][1])
 				index=j
 		if(mx<5.5):
-			print("mx become <1.5")
+			#print("mx become <5.5")
 			mx_flag=1
 			break
 		
-		print("mx now is:",mx)
+		#print("mx now is:",mx)
 		m=25
 		os.system("fred_job -k script -p run1/"+files[index]+" -m"+str(m)+" -n"+str(m))
 
@@ -52,7 +52,6 @@ for i in range(0,200):
 	ls1=[]
 	
 	for j in range(1,m+1):
-		print(j,f)
 		fnew = f+'/OUT/RUN'+str(j)+'/DAILY/ORU.DeathOd.txt'
 		with open(fnew)  as file:
 			for line in file:
@@ -61,8 +60,7 @@ for i in range(0,200):
 		last_line = last_line.split(" ")
 
 		res[index].append(int(last_line[-1]))
-		if index==0:
-			print("r:",res[0])
+		
 		file.close()
 
 	p=os.popen("fred_delete -k script","w")
