@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 
+#This is the code for second method proposed
+
 import os
 import glob
 #import numpy as np
@@ -27,7 +29,6 @@ for i in range(0,100):
 		index=0
 		for j in range(9):
 			error=1.96*math.sqrt(st.variance(res[j]))/math.sqrt(len(res[j]))
-			#print("5")
 			ci[j][0]=st.mean(res[j])-error
 			ci[j][1]=st.mean(res[j])+error
 			if(abs(ci[j][0]-ci[j][1])>mx):
@@ -51,7 +52,6 @@ for i in range(0,100):
 	ls1=[]
 	
 	for j in range(1,m+1):
-		#list1 = glob.glob('FRED/RESULTS/JOB/*')
 		print(j,f)
 		fnew = f+'/OUT/RUN'+str(j)+'/DAILY/ORU.DeathOd.txt'
 		with open(fnew)  as file:
