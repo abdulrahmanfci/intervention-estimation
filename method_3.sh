@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-# This is the code for the third method proposed in the paper
+# This is the code for the third method (greedy-2) proposed in the paper
 
 import os
 import glob
@@ -21,9 +21,7 @@ def gradient_descent(x, y, beta, lr, num_epochs):
 
     for i in range(num_epochs):
         multi_x = matmulti(x, beta)
-        #print(np.shape(h_x))
         cost_val = (1/n)*(x.T@(multi_x - y))
-        print(cost_val)
         beta = beta - (lr)*cost_val
         grad.append(Q(x, y, beta))
 
@@ -55,10 +53,7 @@ for i in range(0,200):
 			num1 = r.randint(1,3)
 			num2 = r.randint(1,3)
 			x.append([num1,num2,num1*num2])
-			#tot = np.array(res).flatten()
-			#sz = np.shape(tot)
-			#rand_val = r.randint(1,sz-1)
-    			#print(num1,num2,rand_val)
+			
 			if num1==1:
 				y.append(res[num2-1][r.randint(1,len(res[num2-1]))])
 			if num1==2:
@@ -103,8 +98,6 @@ for i in range(0,200):
 	
 	
 	for j in range(1,m+1):
-		#list1 = glob.glob('FRED/RESULTS/JOB/*')
-		print(j,f)
 		fnew = f+'/OUT/RUN'+str(j)+'/DAILY/ORU.DeathOd.txt'
 		with open(fnew)  as file:
 			for line in file:
